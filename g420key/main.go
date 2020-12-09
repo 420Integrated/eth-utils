@@ -8,10 +8,10 @@ import (
 	"path"
 
 	"github.com/codegangsta/cli"
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/420integrated/go-420coin/accounts"
+	"github.com/420integrated/go-420coin/cmd/utils"
+	"github.com/420integrated/go-420coin/common"
+	"github.com/420integrated/go-420coin/crypto"
 	"github.com/peterh/liner"
 )
 
@@ -21,24 +21,24 @@ const (
 
 func main() {
 	app := cli.NewApp()
-	app.Name = "gethkey"
-	app.Action = gethkey
+	app.Name = "g420key"
+	app.Action = g420key
 	app.HideVersion = true // we have a command to print the version
 	app.Usage = `
 
-    gethkey [-p <passwordfile>|-d <keydir>] <address> <keyfile>
+    g420key [-p <passwordfile>|-d <keydir>] <address> <keyfile>
 
 Exports the given account's private key into <keyfile> using the hex encoding canonical EC
 format.
 The user is prompted for a passphrase to unlock it.
 For non-interactive use, the passphrase can be specified with the --password|-p flag:
 
-    gethkey --password <passwordfile>  <address> <keyfile>
+g420key --password <passwordfile>  <address> <keyfile>
 
-You can set an alternative key directory to use to find your ethereum encrypted keyfile.
+You can set an alternative key directory to use to find your 420coin encrypted keyfile.
 
 Note:
-As you can directly copy your encrypted accounts to another ethereum instance,
+As you can directly copy your encrypted accounts to another 420coin instance,
 this import/export mechanism is not needed when you transfer an account between
 nodes.
           `
